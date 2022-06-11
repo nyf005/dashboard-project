@@ -2,7 +2,7 @@
 
 :root {
     --base-font-size: 1rem;
-    --layout-padding: 2rem;
+    --layout-padding: 1.5rem 2rem;
     --aside-row-gap: 2rem;
 
     --blue-color: #2563EB;
@@ -93,7 +93,7 @@ header {
 
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 2.5rem 1fr;
     gap: .5rem;
     z-index: 1;
 }
@@ -104,6 +104,7 @@ header {
 #bottom-right {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
 }
 
 
@@ -113,22 +114,21 @@ header {
 
 #bottom-left {
     grid-column: 1 / 2;
+    gap: 1rem;
 }
 
 #top-right {
     grid-column: 2 / 3;
-    justify-content: center;
-    gap: 1.5rem;
+    justify-content: flex-end;
 }
 
 #bottom-right {
     grid-column: 2 / 3;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 form {
     width: 100%;
-    margin: .5rem;
     display: grid;
     grid-template-columns: 2rem 1fr;
     gap: .5rem;
@@ -141,6 +141,7 @@ label[for=search] {
 label[for=search] img {
     place-self: center;
 }
+
 
 input[type=search] {
     padding: .3rem 1rem;
@@ -155,16 +156,43 @@ input[type=search]:active {
 }
 
 
-#top-right #profile-picture {
-   max-width: 2.5rem;
-   display: block;
+.profile-picture {
+   max-width: 10%;
 }
 
-#profile-picture img {
+.profile-picture img {
     width: 100%;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+}
+
+#profile-name {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+#bottom-right button {
+    width: 5rem;
+    padding: .5rem;
+    outline: none;
+    background-color: var(--blue-color);
+    color: #fff;
+    border: 1px solid var(--blue-color);
+    border-radius: 25px;
+}
+
+#bottom-right button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+#bottom-right button:active {
+    background-color: #fff;
+    color: #000;
+    font-weight: bold;
+    background-color: var(--grey-color);
+    border: 3px solid var(--blue-color);
 }
 
 main {

@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 :root {
-    --base-font-size: 0.9rem;
-    --layout-padding: 1.5rem;
+    --base-font-size: 1rem;
+    --layout-padding: 2rem;
     --aside-row-gap: 2rem;
 
-    --blue-color: #1992d4;
-    --grey-color: #e2e8f0;
-    --yellow-color: #f0b429;
+    --blue-color: #2563EB;
+    --grey-color: #E2E8F0;
+    --yellow-color: #FACC15;
+
+    --box-shadow: 0 .3rem 1.2rem #94A3B8;
 }
 
 * {
@@ -19,12 +21,10 @@
 body {
     font-family: Roboto, sans-serif;
     font-size: var(--base-font-size);
-    padding: 0 9rem;
 
     display: grid;
-    grid-template-columns: 15rem 4fr;
-    grid-template-rows: 9rem auto;
-    row-gap: .2rem;
+    grid-template-columns: 15rem 1fr;
+    grid-template-rows: 10rem auto;
     grid-template-areas: 
         "sidebar header"
         "sidebar main-content";
@@ -34,12 +34,6 @@ header,
 aside,
 main {
     padding: var(--layout-padding);
-}
-
-header {
-    grid-area: header;
-    background-color: #fff;
-    box-shadow: 0 1rem #ccc;
 }
 
 aside {
@@ -52,33 +46,126 @@ aside {
     gap: var(--aside-row-gap);
 }
 
+aside h1 {
+    font-size: 1.3rem;
+}
+
+aside a {
+    font-size: 0.9rem;
+    color: #fff;
+    text-decoration: none;
+}
+
 #branding img {
-    width: 80%;
+    width: 70%;
 }
 
 #top-menu img, #bottom-menu img {
-    width: 50%;
+    width: 35%;
 }
 
 #branding,
-#top-menu div,
-#bottom-menu div {
+#top-menu a,
+#bottom-menu a {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    grid-auto-rows: 3rem;
+    grid-auto-rows: 2.5rem;
 }
 
 #branding img,
 #top-menu img, 
 #bottom-menu img {
+    grid-column: 1/2;
     place-self: center;
 }
 
 #branding h1,
 #top-menu h3, 
 #bottom-menu h3 {
+    grid-column: 2/3;
     align-self: center;
-    }
+}
+
+header {
+    grid-area: header;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    gap: .5rem;
+    z-index: 1;
+}
+
+#top-left,
+#bottom-left,
+#top-right,
+#bottom-right {
+    display: flex;
+    align-items: center;
+}
+
+
+#top-left {
+    grid-column: 1 / 2;
+}
+
+#bottom-left {
+    grid-column: 1 / 2;
+}
+
+#top-right {
+    grid-column: 2 / 3;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+#bottom-right {
+    grid-column: 2 / 3;
+    justify-content: center;
+}
+
+form {
+    width: 100%;
+    margin: .5rem;
+    display: grid;
+    grid-template-columns: 2rem 1fr;
+    gap: .5rem;
+}
+
+label[for=search] {
+    display: grid;
+}
+
+label[for=search] img {
+    place-self: center;
+}
+
+input[type=search] {
+    padding: .3rem 1rem;
+    border: 1px solid var(--grey-color);
+    background-color: var(--grey-color);
+    border-radius: 20px;
+}
+
+input[type=search]:active {
+    outline: none;
+    border: 2px solid var(--blue-color);
+}
+
+
+#top-right #profile-picture {
+   max-width: 2.5rem;
+   display: block;
+}
+
+#profile-picture img {
+    width: 100%;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
 
 main {
     grid-area: main-content;

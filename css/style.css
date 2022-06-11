@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --base-font-size: 0.9rem;
+    --layout-padding: 1.5rem;
+    --aside-row-gap: 2rem;
+
+    --blue-color: #1992d4;
+    --grey-color: #e2e8f0;
+    --yellow-color: #f0b429;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,30 +17,70 @@
 }
 
 body {
-    font-size: 1rem;
-    line-height: 1.6;
-
-    margin: 0 5em;
+    font-family: Roboto, sans-serif;
+    font-size: var(--base-font-size);
+    padding: 0 9rem;
 
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-template-rows: 2fr auto;
+    grid-template-columns: 15rem 4fr;
+    grid-template-rows: 9rem auto;
+    row-gap: .2rem;
     grid-template-areas: 
         "sidebar header"
         "sidebar main-content";
 }
 
+header,
+aside,
+main {
+    padding: var(--layout-padding);
+}
+
 header {
     grid-area: header;
-    background-color: firebrick;
+    background-color: #fff;
+    box-shadow: 0 1rem #ccc;
 }
 
 aside {
     grid-area: sidebar;
-    background-color: lavenderblush;
+    background-color: var(--blue-color);
+    color: #fff;
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--aside-row-gap);
 }
+
+#branding img {
+    width: 80%;
+}
+
+#top-menu img, #bottom-menu img {
+    width: 50%;
+}
+
+#branding,
+#top-menu div,
+#bottom-menu div {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-rows: 3rem;
+}
+
+#branding img,
+#top-menu img, 
+#bottom-menu img {
+    place-self: center;
+}
+
+#branding h1,
+#top-menu h3, 
+#bottom-menu h3 {
+    align-self: center;
+    }
 
 main {
     grid-area: main-content;
-    background-color: cadetblue;
+    background-color: var(--grey-color);
 }

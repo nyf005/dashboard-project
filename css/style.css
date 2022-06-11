@@ -198,4 +198,49 @@ input[type=search]:active {
 main {
     grid-area: main-content;
     background-color: var(--grey-color);
+
+    display: grid;
+    grid-template-columns: 1fr 15rem;
+    gap: 1.5rem;
 }
+
+#project-cards {
+    margin: 1.5rem 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-left: .5rem solid var(--yellow-color);
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+
+    display: grid;
+    grid-template-rows: 1fr 2fr 1fr;
+    row-gap: .2rem;
+}
+
+.card h4 {
+    align-self: end;
+}
+
+.card p {
+    align-self: start;
+    font-size: .9rem;
+    line-height: 1.6;
+}
+
+.card-icons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 1.5rem;
+}
+
+.card-icons img {
+    width: 1.5rem;
+}
+

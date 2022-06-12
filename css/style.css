@@ -205,7 +205,7 @@ main {
 }
 
 #project-cards {
-    margin: 1.5rem 0;
+    margin: .5rem 0;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     gap: 1.5rem;
@@ -258,6 +258,40 @@ main {
 #main-right {
     display: grid;
     grid-template-rows: 1fr 1fr;
-    gap: 1.5rem;
+    row-gap: 1.5rem;
 }
 
+#announcements {
+    grid-row: 1 / 2;    
+}
+
+#trendings {
+    grid-row: 2 / 3;
+}
+
+#announcements,
+#trendings {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.right-card {
+    background-color: #fff;
+    margin: .5rem 0;
+    padding: 1.5rem;
+    border-left: none;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-card p {
+    font-size: 0.8rem;
+}
+
+.right-card hr {
+    border: 1px solid var(--grey-color);
+}

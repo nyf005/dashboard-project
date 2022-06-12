@@ -238,9 +238,26 @@ main {
     justify-content: flex-end;
     align-items: flex-end;
     gap: 1.5rem;
+
+    /* Use filter property to change hex code color of svg (https://isotropic.co/tool/hex-color-to-css-filter/)*/
+    filter: invert(71%) sepia(15%) saturate(407%) hue-rotate(176deg) brightness(90%) contrast(84%);
+}
+
+.card-icons a:hover {
+    filter: invert(33%) sepia(65%) saturate(5592%) hue-rotate(218deg) brightness(96%) contrast(91%);
+}
+
+.card-icons a:active {  
+    filter: invert(61%) sepia(58%) saturate(591%) hue-rotate(8deg) brightness(100%) contrast(108%);
 }
 
 .card-icons img {
     width: 1.5rem;
+}
+
+#main-right {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1.5rem;
 }
 

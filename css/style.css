@@ -30,6 +30,7 @@ body {
         "sidebar main-content";
 }
 
+
 header,
 aside,
 main {
@@ -155,7 +156,6 @@ input[type=search]:active {
     border: 2px solid var(--blue-color);
 }
 
-
 .profile-picture {
    max-width: 10%;
    padding: .3rem;
@@ -227,7 +227,7 @@ main {
 #project-cards {
     margin: .5rem 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
@@ -299,8 +299,7 @@ main {
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    
+    justify-content: space-between;    
 }
 
 .right-card p {
@@ -351,65 +350,63 @@ main {
     color: var(--blue-color);
 }
 
-@media (max-width: 900px) {
-    body {
-        grid-template-areas: 
-        "header header"
-        "sidebar main-content";
-    }
-
+@media (max-width: 1200px) {
     main {
+        grid-template-columns: auto;
         grid-template-areas: 
-            "projects projects"
-            "main-right main-right"
-        ;
-    }
-
-    #projects {
-        grid-area: projects;
+        "projects"
+        "main-right";
     }
 
     #main-right {
         grid-area: main-right;
 
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 
         "announcements trendings";
-
-        grid-template-rows: auto;   
-        
     }
 
-    #annoucements {
+    #announcements {
         grid-area: announcements;
     }
 
     #trendings {
-        grid-area: trendings
+        grid-area: trendings;
     }
 
     .right-card {
-        gap: 1rem;
-    } 
+        gap: .5rem;
+    }
+
+    .user-trend .profile-picture {
+        max-width: 3rem;
+    }
     
 }
 
+@media (max-width: 900px) {
+    body {
+        grid-template-areas: 
+            "header header"
+            "sidebar main-content";
+    }
+}
 
 @media (max-width: 768px) {
 
-    main {
-        grid-template-areas: 
-            "projects "
-            "main-right"
-        ;
+    h3, h4, p {
+        font-size: 1rem;
     }
 
-    #projects {
-        grid-area: projects;
-    }
-
+    #bottom-left .profile-picture {
+        max-width: 10%;
+     
+     }
     #main-right {
-         grid-template-areas: 
+        grid-template-columns: auto;
+        grid-template-areas: 
         "announcements"
         "trendings";
     }
+    
 }

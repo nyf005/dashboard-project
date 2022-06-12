@@ -352,6 +352,12 @@ main {
 }
 
 @media (max-width: 900px) {
+    body {
+        grid-template-areas: 
+        "header header"
+        "sidebar main-content";
+    }
+
     main {
         grid-template-areas: 
             "projects projects"
@@ -389,6 +395,7 @@ main {
 
 
 @media (max-width: 768px) {
+
     main {
         grid-template-areas: 
             "projects "

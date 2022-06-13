@@ -383,7 +383,7 @@ main {
   /* make right section of main in two columns of same size*/
   #main-right {
     grid-area: main-right;
-
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "announcements trendings";
   }

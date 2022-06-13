@@ -454,6 +454,11 @@ main {
     justify-content: flex-start;
   }
 
+  #top-right img:first-child {
+    order: 3;
+    margin-left: auto;
+  }
+
   #top-left {
     grid-area: top-left;
   }
